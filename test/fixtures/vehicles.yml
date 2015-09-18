@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vehicle_no: MyString
+  license_no: MyString
+  vechicle_description: MyText
+  owner_name: MyString
+  owner_address: MyText
+  owner_contact: MyString
+
+two:
+  vehicle_no: MyString
+  license_no: MyString
+  vechicle_description: MyText
+  owner_name: MyString
+  owner_address: MyText
+  owner_contact: MyString

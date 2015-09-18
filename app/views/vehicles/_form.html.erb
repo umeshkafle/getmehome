@@ -1,0 +1,35 @@
+<h3>Form to see the available vehicle</h3>
+
+<%= form_for :vehicle, url: {action: "create"} do|f|%>
+	<p>
+		<%= f.label :vehicle_no%>
+		<%= f.text_field :vehicle_no%>
+	</p>
+
+	<p>
+		<%= f.label :license_no%>
+		<%= f.text_field :license_no%>
+	</p>
+
+	<p>
+		<%= f.label :vehicle_description%>
+		<%= f.text_area :vehicle_description%>
+	</p>
+
+	<p>
+		<%= f.label :owner_name%>
+		<%= f.text_field :owner_name%>
+	</p>
+
+	<p>
+		<%= f.label :owner_address%>
+		<%= f.text_area :owner_address%>
+	</p>
+
+	<p>
+		<%= f.label :owner_contact%>
+		<%= f.text_area :owner_contact%>
+	</p>
+
+	<%= submit_tag("submit details")%>
+	<%end%>

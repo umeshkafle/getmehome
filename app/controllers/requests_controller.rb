@@ -33,6 +33,6 @@ class RequestsController < ApplicationController
   end
 
   def request_params
-    params.require(:request).permit(:name, :loaction, :destination, :contact, :age)
+    params.require(:request).permit(:name, :location, :destination, :contact, :age)
   end
 end
