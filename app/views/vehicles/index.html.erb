@@ -1,2 +1,64 @@
-<h1>Vehicles#index</h1>
-<p>Find me in app/views/vehicles/index.html.erb</p>
+<%@vehicles.each do |vehicle|%>
+	<table>
+		<tr>
+			<td>
+				Vehicle No:			
+			</td>
+			<td>
+				<%= vehicle.vehicle_no %>			
+			</td>
+		</tr>
+		<tr>
+			<td>
+				License No:			
+			</td>
+			<td>
+				<%= vehicle.license_no %>			
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Vehicle Description:			
+			</td>
+			<td>
+				<%= vehicle.vechicle_description %>			
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Name of Owner:			
+			</td>
+			<td>
+				<%= vehicle.owner_name %>			
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Address of Owner:			
+			</td>
+			<td>
+				<%= vehicle.owner_address %>			
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Contact No:			
+			</td>
+			<td>
+				<%= vehicle.owner_contact %>			
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div id="button">
+					<ul>
+						<li><%= link_to "Home", requests_path %></li>
+						<li><%= link_to "Delete Vehicle", request_vehicle_path(@request, vehicle.id), method: :delete, data:{confirm: "Are you sure?"} %></li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+	</table>
+	
+	
+<% end %>

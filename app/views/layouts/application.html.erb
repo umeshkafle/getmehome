@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>GetMeHome</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+	<head>
+  		<title>GetMeHome</title>
+  			<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  			<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  			<%= csrf_meta_tags %>
+	</head>
+	<body>
+		<div id="wrapper">
+			<header>
+				<div id="logo">
+					<%= image_tag('getmen.png', :height=>"70px", :width=>"50px", :alt => 'logo') %>	
+					<%= image_tag('getmecar.png', :height=>"70px", :width=>"50px", :alt => 'logo') %>
+					<%= image_tag('getme-house.png', :height=>"70px", :width=>"50px", :alt => 'logo') %>
+				 </div>
+				<nav>
+					<ul>
+						<li><%= link_to "Home", requests_path%></li>
+						<li><%= link_to "Add Request", new_request_path%></li>
+						<li><%= link_to "Add vehicle", new_request_vehicle_path(request)%></li>
+					</ul>
+				</nav>
+			</header>
+			<section>
+				<hr>
+				<%= yield %>	
+			</section>
+			
+		</div>
+	</body>
 </html>

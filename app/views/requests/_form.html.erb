@@ -1,27 +1,21 @@
 <h3>Form for Request</h3>
 <%=form_for :request, url: {action: "create"} do|f|%>
 	<p>
-		<%= f.label :name%>
 		<%= f.text_field :name, placeholder: "Enter your name"%>
 	</p>
 	<p>
-		<%= f.label :location%>
 		<%= f.text_area :location, placeholder: "Enter your location"%>
 	</p>
 	<p>
-		<%= f.label :destination%>
 		<%= f.text_field :destination, placeholder: "Enter your destination"%>
 	</p>
 	<p>
-		<%= f.label :contact%>
 		<%= f.text_field :contact, placeholder: "Enter age contact"%>
 	</p>
 	<p>
-		<%= f.label :age%>
 		<%= f.text_field :age, placeholder: "Enter your age"%>
 	</p>
 
-	<%= submit_tag ("Post Request")%>
-	<%= link_to "Back", requests_path%>
+	<%= submit_tag ("Post Request")%><br/>
 	
 <%end%> 

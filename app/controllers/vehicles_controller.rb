@@ -6,7 +6,7 @@ class VehiclesController < ApplicationController
 
   def show
     @request = Request.find(params[:request_id])
-    @vehicles = @request.vehicles
+    @vehicle = @request.vehicles.find(params[:id])
   end
 
   def new
@@ -18,7 +18,7 @@ class VehiclesController < ApplicationController
     @request = Request.find(params[:request_id])
     @vehicles = @request.vehicles.new(vehicles_params)
     if @request.save
-      redirect_to request_vehicles_path(request_id)
+      redirect_to requests_path
     end
   end
 
@@ -31,7 +31,8 @@ class VehiclesController < ApplicationController
   def destroy
   end
 
+private
   def vehicles_params
-    params.require(:vehicle).permit(:vehicle_no, :license_no, :vehicle_description, :owner_name, :owner_address, :owner_contact)
+    params.require(:vehicle).permit(:vehicle_no, :license_no, :vechicle_description, :owner_name, :owner_address, :owner_contact)
   end
 end

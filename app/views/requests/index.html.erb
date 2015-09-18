@@ -1,22 +1,54 @@
-<h3>Farer Request</h3>
-<%= link_to "Add Information", new_request_path %>
 <%@requests.each do |request|%>
-	   
-	<p>
-		<strong>Name: </strong>
-		<%= request.name%><br>
-		<strong>Location: </strong>
-		<%= request.location%><br/>
-		<strong>Destination: </strong>
-		<%= request.destination%><br/>
-		<strong>Contact: </strong>
-		<%= request.contact%><br/>
-		<strong>Age: </strong>
-		<%= request.age%><br><br>
-		<%= link_to "Delete Request", request_path(request.id), method: :delete, data:{confirm: "Are you sure?"} %>
-		<%= link_to "Add new Request", new_request_path%>
-		<%= link_to "Add vehicle", new_request_vehicle_path(request)%>
-		
+	<table>
+		<tr>
+			<td>
+				<strong>Name: </strong>		
+			</td>
+			<td>
+				<%= request.name%>		
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<strong>Location: </strong>		
+			</td>
+			<td>
+				<%= request.location%>		
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<strong>Destination: </strong>		
+			</td>
+			<td>
+				<%= request.destination%><br/>		
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<strong>Contact: </strong>
+			</td>
+			<td>
+				<%= request.contact%>		
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<strong>Age: </strong>		
+			</td>
+			<td>
+				<%= request.age%>		
+			</td>
+		</tr>
+	</table>				
+	<div id="button">
+		<ul>
+			<li><%= link_to "Delete Request", request_path(request.id), method: :delete, data:{confirm: "Are you sure?"} %>
+			</li>
+			<li><%= link_to "Add vehicle", new_request_vehicle_path(request)%></li>
+			<li>
+				<%= link_to "View vehicle", request_vehicles_path(request)%>
+			</li>	
+		</ul>	
+	</div>
 <%end%>
-
-
