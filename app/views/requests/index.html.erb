@@ -1,2 +1,18 @@
 <h3>Farer Request</h3>
-<%= link_to "Add Information", requests_path %>
+<%= link_to "Add Information", new_request_path %>
+<%@requests.each do |request|%>
+	<p>
+		<strong>Name: </strong>
+		<%= request.name%><br>
+		<strong>Location: </strong>
+		<%= request.location%><br/>
+		<strong>Destination: </strong>
+		<%= request.destination%><br/>
+		<strong>Contact: </strong>
+		<%= request.contact%><br/>
+		<strong>Age: </strong>
+		<%= request.age%><br><br>
+		<%= link_to "Delete Request", request_path(request.id), method: :delete, data:{confirm: "Are you sure?"} %>
+<%end%>
+
+
